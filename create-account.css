@@ -1,0 +1,105 @@
+/* Create Account Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2c3e50, #27ae60); /* Dark blue to green gradient */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #fff; /* White color for header text */
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Create Account Form */
+.create-account-section {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.create-account-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-account-section label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.create-account-section input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #27ae60;
+    background-color: #f1f1f1;
+    font-size: 1em;
+}
+
+.create-account-section input:focus {
+    border-color: #2ecc71;
+    background-color: #fff;
+    outline: none;
+}
+
+.create-account-section button {
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-account-section button:hover {
+    background-color: #2ecc71;
+}
+
+/* Text Links */
+.create-account-section p {
+    font-size: 1em;
+}
+
+.create-account-section a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-account-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background: #004d40;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

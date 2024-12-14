@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Management</title>
+    <link rel="stylesheet" href="crop-management.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crop-management.html">Crop Management</a></li>
+            <li><a href="weather-updates.html">Weather Updates</a></li>
+            <li><a href="market-insights.html">Market Insights</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Crop Management Solutions</h1>
+            <p>Optimize yields and enhance productivity with cutting-edge technology.</p>
+            <a href="#features" class="cta-button">Learn More</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="yield.jpg" alt="Yield Optimization">
+                <h3>Yield Optimization</h3>
+                <p>Leverage data to maximize crop yield efficiently.</p>
+            </div>
+            <div class="feature-card">
+                <img src="crop-tracking.jpg" alt="Crop Tracking">
+                <h3>Crop Tracking</h3>
+                <p>Monitor crop growth and health in real-time.</p>
+            </div>
+            <div class="feature-card">
+                <img src="resource-management.jpg" alt="Resource Management">
+                <h3>Resource Management</h3>
+                <p>Utilize water, soil, and fertilizers effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Budget Calculator and Production Costs Section -->
+    <section id="crop-budget" class="crop-budget">
+        <h2>Crop Budget Calculator and Production Costs</h2>
+        <div class="crop-budget-grid">
+            <div class="crop-budget-card">
+                <h3>Budget Calculator</h3>
+                <p>Use our budget calculator to estimate your crop production costs and expected revenue.</p>
+                <form id="budget-calculator">
+                    <label for="acreage">Acreage (acres):</label>
+                    <input type="number" id="acreage" name="acreage" required>
+                    <label for="seed-cost">Seed Cost (per acre):</label>
+                    <input type="number" id="seed-cost" name="seed-cost" required>
+                    <label for="fertilizer-cost">Fertilizer Cost (per acre):</label>
+                    <input type="number" id="fertilizer-cost" name="fertilizer-cost" required>
+                    <label for="pesticide-cost">Pesticide Cost (per acre):</label>
+                    <input type="number" id="pesticide-cost" name="pesticide-cost" required>
+                    <label for="labor-cost">Labor Cost (per acre):</label>
+                    <input type="number" id="labor-cost" name="labor-cost" required>
+                    <label for="other-cost">Other Costs (per acre):</label>
+                    <input type="number" id="other-cost" name="other-cost" required>
+                    <label for="expected-yield">Expected Yield (bushels per acre):</label>
+                    <input type="number" id="expected-yield" name="expected-yield" required>
+                    <label for="price-per-bushel">Price per Bushel ($):</label>
+                    <input type="number" id="price-per-bushel" name="price-per-bushel" required>
+                    <button type="button" onclick="calculateBudget()">Calculate</button>
+                </form>
+                <div id="budget-result"></div>
+            </div>
+            <div class="crop-budget-card">
+                <h3>Production Costs</h3>
+                <p>Understand the various production costs involved in crop farming, including:</p>
+                <ul>
+                    <li>Seed costs</li>
+                    <li>Fertilizer costs</li>
+                    <li>Pesticide costs</li>
+                    <li>Labor costs</li>
+                    <li>Machinery costs</li>
+                    <li>Other operational costs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 AgriCare. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateBudget() {
+            const acreage = document.getElementById('acreage').value;
+            const seedCost = document.getElementById('seed-cost').value;
+            const fertilizerCost = document.getElementById('fertilizer-cost').value;
+            const pesticideCost = document.getElementById('pesticide-cost').value;
+            const laborCost = document.getElementById('labor-cost').value;
+            const otherCost = document.getElementById('other-cost').value;
+            const expectedYield = document.getElementById('expected-yield').value;
+            const pricePerBushel = document.getElementById('price-per-bushel').value;
+
+            const totalCostPerAcre = parseFloat(seedCost) + parseFloat(fertilizerCost) + parseFloat(pesticideCost) + parseFloat(laborCost) + parseFloat(otherCost);
+            const totalRevenuePerAcre = expectedYield * pricePerBushel;
+            const profitPerAcre = totalRevenuePerAcre - totalCostPerAcre;
+            const totalCost = totalCostPerAcre * acreage;
+            const totalRevenue = totalRevenuePerAcre * acreage;
+            const totalProfit = profitPerAcre * acreage;
+
+            document.getElementById('budget-result').innerHTML = `
+                <h4>Results:</h4>
+                <p>Total Cost: $${totalCost.toFixed(2)}</p>
+                <p>Total Revenue: $${totalRevenue.toFixed(2)}</p>
+                <p>Total Profit: $${totalProfit.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
