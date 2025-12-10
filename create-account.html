@@ -3,34 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - AgriCare</title>
-    <link rel="stylesheet" href="create-account.css">
+    <title>Join AgriCare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ============================
+           1. RESET & BACKGROUND
+           ============================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            /* This mimics the "Modal" dark overlay look */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hand.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full screen height */
+            display: flex;
+            align-items: center; /* Vertically Center */
+            justify-content: center; /* Horizontally Center */
+            overflow: hidden; /* No scrolling */
+        }
+
+        /* ============================
+           2. THE WHITE CARD
+           ============================ */
+        .signup-card {
+            background-color: white;
+            width: 100%;
+            max-width: 400px; /* Controls the width */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Strong shadow for "floating" effect */
+            text-align: center;
+            position: relative;
+            animation: popIn 0.5s ease;
+        }
+
+        /* Animation to make it pop up */
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* ============================
+           3. CARD CONTENTS
+           ============================ */
+        .logo-area {
+            margin-bottom: 20px;
+        }
+        .logo-area img {
+            height: 50px; /* Adjust logo size */
+        }
+
+        h2 { color: #004d40; margin-bottom: 10px; }
+        p { color: #666; font-size: 0.9em; margin-bottom: 25px; }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #27ae60;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover { background-color: #219150; transform: translateY(-2px); }
+
+        /* ============================
+           4. LINKS & UTILS
+           ============================ */
+        .login-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .login-link a { color: #27ae60; text-decoration: none; font-weight: bold; }
+        .login-link a:hover { text-decoration: underline; }
+
+        /* Close Button (X) - Optional, takes you back to home */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #aaa;
+            text-decoration: none;
+        }
+        .close-btn:hover { color: #000; }
+
+        #signup-msg { margin-top: 15px; font-weight: bold; font-size: 0.9em; }
+
+        /* Mobile Responsive */
+        @media (max-width: 450px) {
+            .signup-card {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Create Your Account</h1>
-    </header>
+    <div class="signup-card">
+        <a href="index.html" class="close-btn">&times;</a>
 
-    <section class="create-account-section">
-        <form action="#" method="POST">
-            <label for="new-username">Username:</label>
-            <input type="text" id="new-username" name="new-username" required>
+        <div class="logo-area">
+            <img src="logos.avif" alt="AgriCare">
+        </div>
 
-            <label for="new-password">Password:</label>
-            <input type="password" id="new-password" name="new-password" required>
-
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-
-            <button type="submit" class="create-account-btn">Create Account</button>
+        <h2>Create Account</h2>
+        <p>Join the AgriCare community today.</p>
+        
+        <form onsubmit="handleSignup(event)">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="su-user" placeholder="Choose a username" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="su-email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="su-pass" placeholder="Create a strong password" required>
+            </div>
+            
+            <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="index.html">Login</a></p>
-    </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 AgriCare. All rights reserved.</p>
-    </footer>
+        <p id="signup-msg"></p>
+
+        <div class="login-link">
+            Already have an account? <a href="index.html">Login here</a>
+        </div>
+    </div>
+
+    <script>
+        function handleSignup(e) {
+            e.preventDefault(); 
+            const msg = document.getElementById('signup-msg');
+            const btn = e.target.querySelector('button');
+            
+            // Visual feedback
+            btn.innerText = "Creating Account...";
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            const data = {
+                username: document.getElementById('su-user').value,
+                email: document.getElementById('su-email').value,
+                password: document.getElementById('su-pass').value
+            };
+
+            fetch('signup.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(response => {
+                msg.innerText = response.message;
+                btn.innerText = "Sign Up";
+                btn.style.opacity = "1";
+                btn.disabled = false;
+
+                if(response.status === "success") {
+                    msg.style.color = "#27ae60";
+                    // Clear form
+                    document.getElementById('su-user').value = "";
+                    document.getElementById('su-email').value = "";
+                    document.getElementById('su-pass').value = "";
+                    // Redirect after 1.5 seconds
+                    setTimeout(() => window.location.href = "index.html", 1500); 
+                } else {
+                    msg.style.color = "#e74c3c";
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                msg.innerText = "Server Error. Please try again.";
+                msg.style.color = "red";
+                btn.innerText = "Sign Up";
+                btn.style.opacity = "1";
+                btn.disabled = false;
+            });
+        }
+    </script>
 
 </body>
 </html>
