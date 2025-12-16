@@ -29,7 +29,7 @@ $conn->query("SET FOREIGN_KEY_CHECKS = 1");
         <h1>✅ System Reset Successful!</h1>
         <p>All database records have been wiped clean.</p>
         <br>
-        <a href="index.html">Return to Dashboard</a>
+        <a href="index.php">Return to Dashboard</a>
     </div>
 </body>
 </html>
