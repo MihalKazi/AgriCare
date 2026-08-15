@@ -268,77 +268,44 @@ button[type="submit"]:hover { background-color: #27ae60; }
 
 
 /* =========================================
-   6. LOGIN MODAL (FIXED)
+   6. LIVE DASHBOARD (Sensor cards + chart)
    ========================================= */
-/* This specific styling fixes the "Hidden" bug */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 9999; /* Sit on top of everything */
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.6); /* Dark background */
-    backdrop-filter: blur(5px); /* Modern blur effect */
-}
-
-/* Modal Box */
-.modal-content {
-    background-color: #fff;
-    margin: 10vh auto; /* 10% from top */
-    padding: 30px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px; /* Keep it nice and small */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    position: relative;
+.live-dashboard {
+    padding: 50px;
+    background: #f9f9f9;
     text-align: center;
-    animation: slideDown 0.4s ease;
 }
+.live-dashboard h2 { color: #2c3e50; margin-bottom: 30px; }
 
-@keyframes slideDown {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.sensor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-
-/* Close Button */
-.close {
-    color: #aaa;
-    font-size: 30px;
+.sensor-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.sensor-card h3 { margin: 0; color: #7f8c8d; }
+.sensor-card p {
+    font-size: 2.5em;
     font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
+    margin: 10px 0;
 }
-.close:hover { color: #e74c3c; }
+.sensor-card.temp p { color: #e74c3c; }
+.sensor-card.humidity p { color: #3498db; }
+.sensor-card.soil p { color: #27ae60; }
 
-/* Modal Inputs */
-.modal-content input {
-    margin: 10px 0 20px 0;
-}
+.live-dashboard .updating-note { margin-top: 20px; color: #888; }
 
-/* Modal Button */
-.modal-content button {
-    padding: 12px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1.1em;
-}
-.modal-content button:hover { background-color: #219150; }
-
-.create-account-link {
-    display: block;
-    margin-top: 15px;
-    color: #27ae60;
-    text-decoration: none;
-    font-weight: bold;
-}
+/* Contact form response text */
+#form-response { margin-top: 10px; font-weight: bold; }
+#form-response.success { color: green; }
+#form-response.error { color: red; }
 
 
 /* =========================================

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Updates</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="weather-updates.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crop-management.html">Crop Management</a></li>
+            <li><a href="weather-updates.html">Weather Updates</a></li>
+            <li><a href="market-insights.html">Market Insights</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Weather Updates</h1>
+            <p>Stay informed with real-time weather data for better crop management.</p>
+        </div>
+    </header>
+
+    <section id="todays-weather" class="todays-weather">
+        <h2>Check Real-Time Weather</h2>
+
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter City Name (e.g. Dhaka)">
+            <button id="search-btn" type="button" onclick="getWeather()">Get Weather</button>
+            <p id="error-message" class="error-msg"></p>
+        </div>
+
+        <div class="weather-details hidden" id="weather-display">
+            <div class="weather-item">
+                <h3>Location</h3>
+                <p id="city-name">--</p>
+            </div>
+            <div class="weather-item">
+                <h3>Temperature</h3>
+                <p id="temp">--°C</p>
+            </div>
+            <div class="weather-item">
+                <h3>Condition</h3>
+                <p id="condition">--</p>
+            </div>
+            <div class="weather-item">
+                <h3>Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+             <div class="weather-item">
+                <h3>Wind Speed</h3>
+                <p id="wind">-- km/h</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Weather Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="forecast.jpg" alt="Weather Forecast">
+                <h3>Weather Forecast</h3>
+                <p>Get daily and weekly weather predictions.</p>
+            </div>
+            <div class="feature-card">
+                <img src="alerts.jpg" alt="Weather Alerts">
+                <h3>Weather Alerts</h3>
+                <p>Receive instant alerts for severe weather conditions.</p>
+            </div>
+            <div class="feature-card">
+                <img src="rainfall.jpg" alt="Rainfall Data">
+                <h3>Rainfall Data</h3>
+                <p>Monitor rainfall levels to optimize irrigation.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 AgriCare. All rights reserved.</p>
+    </footer>
+
+    <script src="weather.js"></script>
+</body>
+</html>
