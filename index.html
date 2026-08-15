@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCare - Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logos.avif" alt="AgriCare Logo">
+        </a>
+        <div class="navbar-tagline">Empowering Farmers with Technology</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li>
+                <a href="#">Services</a>
+                <ul class="dropdown">
+                    <li><a href="crop-management.html">Crop Management</a></li>
+                    <li><a href="weather-updates.html">Weather Updates</a></li>
+                    <li><a href="market-insights.html">Market Insights</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact-us">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AgriCare</h1>
+            <p>Empowering sustainable farming with technology-driven solutions.</p>
+            <a href="#services" class="hero-button">Explore Our Services</a>
+        </div>
+    </header>
+
+    <section id="live-dashboard" class="live-dashboard">
+        <h2>📡 Live Field Monitoring</h2>
+
+        <div class="sensor-cards">
+            <div class="sensor-card temp">
+                <h3>Temperature</h3>
+                <p><span id="temp-display">--</span> °C</p>
+            </div>
+
+            <div class="sensor-card humidity">
+                <h3>Humidity</h3>
+                <p><span id="hum-display">--</span> %</p>
+            </div>
+
+            <div class="sensor-card soil">
+                <h3>Soil Moisture</h3>
+                <p><span id="soil-display">--</span></p>
+            </div>
+        </div>
+
+        <p class="updating-note">Live data updating every 2 seconds...</p>
+    </section>
+
+    <section id="about-us" class="section about-us">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>AgriCare provides advanced technological solutions to support sustainable and efficient farming practices, delivering tools and insights that help farmers optimize their yield and improve crop management.</p>
+        </div>
+        <div class="about-image">
+            <img src="farmer.jpg" alt="About Us Image">
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <h2>Our Services</h2>
+        <p>Explore the innovative solutions we provide for modern agriculture.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Crop Management</h3>
+                <p>Manage your crops efficiently with our cutting-edge tools and insights.</p>
+                <a href="crop-management.html" class="service-link">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Weather Updates</h3>
+                <p>Stay ahead with accurate, real-time weather updates for your area.</p>
+                <a href="weather-updates.html" class="service-link">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Market Insights</h3>
+                <p>Get detailed market analysis to make informed decisions for your business.</p>
+                <a href="market-insights.html" class="service-link">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" class="section contact-us">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out!</p>
+
+        <form onsubmit="return false;">
+            <label for="contact-name">Your Name:</label>
+            <input type="text" id="contact-name" placeholder="Kazi Rohanuzzaman Mehal" required>
+
+            <label for="contact-email">Your Email:</label>
+            <input type="email" id="contact-email" placeholder="rohankazi728@gmail.com" required>
+
+            <label for="contact-message">Message:</label>
+            <textarea id="contact-message" rows="5" placeholder="How can we help?" required></textarea>
+
+            <button type="button" onclick="sendMessage()">Send Message</button>
+            <p id="form-response"></p>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 AgriCare. All rights reserved.</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

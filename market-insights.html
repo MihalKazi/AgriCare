@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Insights</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="market-insights.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crop-management.html">Crop Management</a></li>
+            <li><a href="weather-updates.html">Weather Updates</a></li>
+            <li><a href="market-insights.html">Market Insights</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Actionable Market Insights</h1>
+            <p>Make informed decisions with real-time market trends and price predictions.</p>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="market-trends.jpg" alt="Market Trends">
+                <h3>Market Trends</h3>
+                <p>Stay ahead with the latest market price trends and forecasts.</p>
+            </div>
+            <div class="feature-card">
+                <img src="price-predictions.png" alt="Price Predictions">
+                <h3>Price Predictions</h3>
+                <p>Make better selling decisions with accurate price predictions.</p>
+            </div>
+            <div class="feature-card">
+                <img src="demand-analysis.png" alt="Demand Analysis">
+                <h3>Demand Analysis</h3>
+                <p>Understand demand patterns to optimize your sales strategy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="market-dashboard" class="market-dashboard">
+
+        <div class="ticker-panel">
+            <h2>📉 Live Global Rates</h2>
+            <p class="ticker-subtitle">Updates every 3 seconds</p>
+            <div id="ticker-box">
+                </div>
+        </div>
+
+        <div class="marketplace-panel">
+            <h2>🤝 Sell Your Harvest</h2>
+            <p>Post your crops for sale directly to buyers.</p>
+
+            <div class="post-box">
+                <div class="form-grid">
+                    <input type="text" id="farmer" placeholder="Your Name">
+                    <input type="text" id="crop" placeholder="Crop (e.g. Rice)">
+                </div>
+                <div class="form-grid">
+                    <input type="text" id="qty" placeholder="Quantity (e.g. 1 Ton)">
+                    <input type="text" id="price" placeholder="Price ($)">
+                </div>
+                <input type="text" id="contact" placeholder="Phone Number">
+                <button class="btn-sell" type="button" onclick="postAd()">📢 Post Listing</button>
+            </div>
+
+            <h3>Recent Listings</h3>
+            <table class="listings-table">
+                <thead>
+                    <tr>
+                        <th>Crop</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Farmer Contact</th>
+                    </tr>
+                </thead>
+                <tbody id="listings-body">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"AgriCare's market insights helped us plan and price our harvest perfectly!"</p>
+                <h4>- Farmer A</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Thanks to the accurate price predictions, we sold at the right time and maximized profit."</p>
+                <h4>- Farmer B</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 AgriCare. All rights reserved.</p>
+    </footer>
+
+    <script src="market.js"></script>
+</body>
+</html>
