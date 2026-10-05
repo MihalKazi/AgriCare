@@ -15,3 +15,23 @@ Desktop.ini
 # --- Node Modules (If you ever add node.js later) ---
 node_modules/
 npm-debug.log
+# Added: standard ignores
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+.vscode/
+.idea/
+*.swp
+
+# Environment and secrets (never commit real values)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
